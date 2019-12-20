@@ -9,8 +9,8 @@ const dburl = process.env.URL;
 
        var data = {
 
-            _id:req.body.id,
-             username:req.body.username,
+           // _id:req.body.id,
+             email:req.body.username,
              password:req.body.password,
              type:req.body.type
           };
@@ -22,7 +22,7 @@ const dburl = process.env.URL;
 
                     let coll = client.db('Aamku').collection('Users');
 
-                    coll.find({_id:req.body.id},function(err,user){
+                    coll.find({email:req.body.username},function(err,user){
 
                                if(err){
                                	console.log("Error",err);
