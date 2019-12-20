@@ -1,9 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const bodyParser = require('body-parser');
 const dotEnv = require('dotenv').config();
 const MongoClient = require('mongodb').MongoClient;
 
 const dburl = process.env.URL;
+
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({extended:true}));
 
 router.post('/saveSalesperson',(req,res) => {
 
