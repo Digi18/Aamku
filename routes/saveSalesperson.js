@@ -27,9 +27,28 @@ const dburl = process.env.URL;
                                if(err){
                                	console.log("Error",err);
                                }
-                               else{
-                               	   res.end("Updated successfully");
+                               if(user){
+                               	   res.end("User exists");
                                }
+                                else{
+
+                        var collection = mongo.con.db("Aamku").collection("Users");
+
+                        collection.insertOne(data,(err,resp) => {
+                                
+                               if(err){
+                                   
+                                   console.log("Error:".red +err);
+                                   
+                               }  
+                               else{
+
+                                   res.send("User created");
+                               }
+
+                         });
+
+                       }
                     });
                   }
    });
