@@ -36,7 +36,7 @@ router.post('/saveSalesperson',(req,res) => {
 
                         var collection = mongo.con.db("Aamku").collection("Users");
 
-                        collection.insertOne(data,(err,resp) => {
+                        coll.insertOne(data,(err,resp) => {
                                 
                                if(err){
                                    
