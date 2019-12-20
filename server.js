@@ -2,8 +2,7 @@ const express = require('express');
 
 const app = express();
 
-app.use(require('./routes/getGeneral.js'));
-app.use(require('./routes/personal.js'));
+app.use(require('./routes/saveSalesperson.js'));
 
 const port = process.env.PORT || 3000;
 
