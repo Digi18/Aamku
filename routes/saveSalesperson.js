@@ -5,6 +5,8 @@ const MongoClient = require('mongodb').MongoClient;
 
 const dburl = process.env.URL;
 
+router.post('/saveSalesperson',(req,res) => {
+
    MongoClient.connect(dburl,{useNewUrlParser:true,UseUnifiedTopology:true},(err,client) => {
 
        var data = {
@@ -51,6 +53,8 @@ const dburl = process.env.URL;
                        }
                     });
                   }
+         });
+
    });
 
    module.exports = router;
