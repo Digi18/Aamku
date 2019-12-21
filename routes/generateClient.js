@@ -16,7 +16,7 @@ router.post('/generateClient',(req,res) => {
              party_name:req.body.name,
              address:req.body.address,
              gst:req.body.gst,
-             day:req.bosy.day,
+             day:req.body.day,
              month:req.body.month,
              vendor:req.body.vendor
           };
