@@ -11,30 +11,29 @@ router.use(bodyParser.urlencoded({extended:true}));
 
 router.post('/saveSalesperson',(req,res) => {
 
-   MongoClient.connect(dburl,{useNewUrlParser:true,UseUnifiedTopology:true},(err,client) => {
+     var data = {
 
-       var data = {
-
-           // _id:req.body.id,
+             _id:req.body.id,
              email:req.body.username,
              password:req.body.password,
              type:req.body.type
           };
-                
+
+   MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true},(err,client) => {
+
                   if(err){
                   	console.log("Error",err);
                   }
-                  else{
+                  
+                  else{	
 
-                    let coll = client.db('Aamku').collection('Users');
-
-                    coll.find({email:req.body.username},function(err,user){
+                  client.db('Aamku').collection('Users').findOne({email:req.body.username},function(err,user){
 
                                if(err){
                                	console.log("Error",err);
                                }
                                if(user){
-                               	   res.end("User exists");
+                               	   res.send("User exists");
                                }
                                 else{
 
@@ -55,8 +54,10 @@ router.post('/saveSalesperson',(req,res) => {
                          });
 
                        }
-                    });
-                  }
+                    });  
+
+                }  
+                  
          });
 
    });
