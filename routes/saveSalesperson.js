@@ -14,7 +14,7 @@ router.post('/saveSalesperson',(req,res) => {
      var data = {
 
              _id:req.body.id,
-             email:req.body.username,
+             username:req.body.username,
              password:req.body.password,
              type:req.body.type
           };
@@ -27,7 +27,7 @@ router.post('/saveSalesperson',(req,res) => {
                   
                   else{	
 
-                  client.db('Aamku').collection('Users').findOne({email:req.body.username},function(err,user){
+                  client.db('Aamku').collection('Users').findOne({username:req.body.username},function(err,user){
 
                                if(err){
                                	console.log("Error",err);
