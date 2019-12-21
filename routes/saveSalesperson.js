@@ -32,9 +32,10 @@ router.post('/saveSalesperson',(req,res) => {
                                if(err){
                                	console.log("Error",err);
                                }
-                               if(user){
+                              if(user){
                                	   res.send("User exists");
                                }
+                             
                                 else{
 
                         let collection = client.db("Aamku").collection("Users");
