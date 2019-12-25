@@ -28,7 +28,7 @@ router.post('/order',(req,res) => {
 
                 	let coll = client.db('Aamku').collection('Orders');
 
-                	coll.insertOne(data,function(err,resp) => {
+                	coll.insertOne(data,(err,resp) => {
 
                           if(err){
                           	consloe.log("Error",err);
