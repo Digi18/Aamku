@@ -6,6 +6,7 @@ app.use(require('./routes/saveSalesperson.js'));
 app.use(require('./routes/generateClient.js'));
 app.use(require('./routes/checkRole.js'));
 app.use(require('./routes/getProducts.js'));
+app.use(require('./routes/orders.js'));
 
 const port = process.env.PORT || 3000;
 
