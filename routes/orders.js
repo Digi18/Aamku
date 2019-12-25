@@ -15,6 +15,7 @@ router.post('/order',(req,res) => {
 
             let data = {
 
+                    _id:req.body.id,
                 	market:req.body.market,
                 	product_no:req.body.product,
                 	cost:req.body.cost
