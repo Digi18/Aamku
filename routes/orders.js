@@ -18,8 +18,7 @@ router.post('/order',(req,res) => {
                     _id:req.body.id,
                 	market:req.body.market,
                 	product_no:req.body.product,
-                	cost:req.body.cost,
-                  row:req.body.row 
+                	cost:req.body.cost
                 }
 
                 if(err){
