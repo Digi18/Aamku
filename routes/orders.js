@@ -32,7 +32,7 @@ router.post('/order',(req,res) => {
                 	coll.insertOne(data,(err,resp) => {
 
                           if(err){
-                          	consloe.log("Error",err);
+                          	console.log("Error",err);
                           }
                           else{
 
