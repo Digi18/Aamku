@@ -14,7 +14,7 @@ router.post('/deleteOrders',(req,res) => {
     MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true},(err,client) => {
                   
              let data = {
-                 user_id:req.body.id   
+                 id:req.body.id   
              };
              
              if(err){
@@ -24,7 +24,7 @@ router.post('/deleteOrders',(req,res) => {
 
                 let coll = client.db('Aamku').collection('Orders');
 
-                coll.deleteMany(data, function(err,obj){
+                coll.deleteMany({user_id:data.id}, function(err,obj){
                        
                     if(err){
                         
